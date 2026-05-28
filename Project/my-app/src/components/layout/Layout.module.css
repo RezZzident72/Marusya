@@ -1,0 +1,54 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягивается на всю высоту экрана */
+  background-color: #c2c2c2; /* Темный фон в стиле Netflix */
+  color: #000000;
+  font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 32px 80px;
+    position: sticky;
+    top: 0;
+    gap: 80px;
+}
+
+.header a {
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 48px;
+}
+
+.searchField {
+    border-radius: 8px;
+    padding: 12px;
+    border: none;
+    gap: 12px;
+    background-color: #393B3C;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+
+.content {
+  flex: 1; /* Занимает ВСЁ свободное пространство между шапкой и футером */
+  padding: 40px;
+  max-width: 1400px; /* Ограничиваем ширину контента на огромных мониторах */
+  width: 100%;
+  margin: 0 auto; /* Центрируем контент по горизонтали */
+  box-sizing: border-box;
+}
