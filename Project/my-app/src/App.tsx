@@ -1,4 +1,4 @@
-import "./App.css"
+import "./App.scss"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
 import { HomePage } from './pages/home-page/HomePage';
@@ -14,9 +14,9 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path: '/movie/:id', element: <FilmPage /> },
+      { path: '/movie/:movieId', element: <FilmPage /> },
       { path: '/favorites', element: <FavoriteFilmsPage /> },
-      { path: '/genres', element: <GenrePage /> },
+      { path: '/movie/genres', element: <GenrePage /> },
       { path: '/genres/:genreId', element: <FilmListPage /> },
       { path: '/profile', element: <UserInfoPage /> },
     ],

@@ -1,0 +1,18 @@
+.socials {
+    display: flex;
+    gap: 10px;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+    }
+
+    &__icon {
+        color: rgba(255, 255, 255, 0.8);
+    }
+}

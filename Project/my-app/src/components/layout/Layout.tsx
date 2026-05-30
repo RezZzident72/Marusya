@@ -1,28 +1,28 @@
 import { Link, Outlet } from "react-router-dom";
-import styles from "./Layout.module.css";
+import styles from "./Layout.module.scss";
+import "../style/_variables.scss";
+import { Socials } from "../../components/social/Social";
+import { NavMenu } from "../../components/nav-menu/NavMenu";
+import logoSvg from "../../assets/image/logo.svg";
 
 export const Layout = () => {
+
     return (
-        <div className={styles.appContainer}>
-            <header className={styles.header}>
-                <Link to="/" className={styles.logo}>Маруся</Link>
-                <nav className={styles.nav}>
-                    <Link to="/" className={styles.link}>Главная</Link>
-                    <Link to="/movie/genres" className={styles.link}>Жанры</Link>
-                    <div className={styles.search}>
-                        <input type="text" id="search-film" className={styles.searchField} placeholder="Поиск"/>
-                        <label htmlFor="search-film"></label>
-                    </div>
-                </nav>
-                <Link to="/profile" className={styles.link}>Профиль</Link>
+        <div className={styles.layout}>
+            <header className={styles['layout__header']}>
+                <Link to="/" className={styles['layout__link']}>
+                    <img src={logoSvg} alt="Логотип маруся" />
+                </Link>
+                <NavMenu />
+                <Link to="/profile" className={styles['layout__link']}>Войти</Link>
             </header>
 
-            <main className={styles.content}>
+            <main className={styles['layout__content']}>
                 <Outlet />
             </main>
 
-            <footer className={styles.footer}>
-                <p>© 2026 Онлайн-кинотеатр.</p>
+            <footer className={styles['layout__footer']}>
+                <Socials />
             </footer>
         </div>
     );
