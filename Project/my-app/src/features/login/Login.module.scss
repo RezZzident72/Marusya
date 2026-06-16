@@ -6,13 +6,13 @@
 
         &--errors {
             input:invalid {
-                border-color: rgba(255, 117, 117, 1);
+                border-color: $color-error;
 
                 &~label {
-                    color: rgba(255, 117, 117, 1);
+                    color: $color-error;
 
                     svg path {
-                        color: rgba(255, 117, 117, 1);
+                        color: $color-error;
                         fill-opacity: 1;
                     }
                 }
@@ -36,7 +36,7 @@
 
     &__error-text{
         margin: 0 auto;
-        color: rgba(255, 117, 117, 1);
+        color: $color-error;
     }
 
     &__registration-btn {
