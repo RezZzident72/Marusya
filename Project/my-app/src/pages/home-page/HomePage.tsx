@@ -1,18 +1,29 @@
-import { useGetMoviesQuery } from "../../services/moviesApi";
-import { FilmCard } from "../../components/film-card/FilmCard";
-import styles from "./HomePage.module.scss";
+import { useGetRandomFilmQuery } from "../../services/cinemaApi";
+import { PromoFilm } from "../../components/promo-film/PromoFilm";
+import { TopFilms } from "../../features/top-films/TopFilms";
 
 export const HomePage = () => {
-   const {data: movies, isLoading, isError} = useGetMoviesQuery()
+   let { data: film, refetch, isLoading } = useGetRandomFilmQuery()
 
-   if (isLoading) return <div>Загрузка фильмов...</div>;
-   if (isError) return <div>Ошибка при загрузке данных</div>;
+   if (isLoading) {
+      return (
+         <div style={{
+            minHeight: '552px',
+            backgroundColor: '#111',
+            borderRadius: '16px',
+            margin: '20px 0'
+         }} />
+      );
+   }
 
    return (
-      <div className={styles.movies}>
-         {movies?.map((film)=> (
-            <FilmCard film={film}/>
-         ))}
-      </div>
+      <>
+         {film &&
+            <PromoFilm film={film} isHome={true} updateFilm={refetch} />
+         }
+         <TopFilms />
+      </>
    )
 }
+
+export default HomePage

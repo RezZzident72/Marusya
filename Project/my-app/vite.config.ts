@@ -3,11 +3,26 @@ import * as path from "node:path"
 import { defineConfig } from "vitest/config"
 import packageJson from "./package.json" with { type: "json" }
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react()
   ],
+  build: {
+    reportCompressedSize: false,
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "/src/styles/_variables.scss";
+          @import "/src/styles/_mixins.scss";
+        `
+      }
+    }
+  },
 
   server: {
     open: true,

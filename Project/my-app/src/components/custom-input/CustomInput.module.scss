@@ -1,0 +1,62 @@
+.custom-input {
+    position: relative;
+    display: flex;
+
+    &:hover {
+        .custom-input__label {
+            color: $color-purple;
+
+            svg path {
+                color: $color-purple;
+                fill-opacity: 1;
+            }
+        }
+
+        .custom-input__field {
+            border: 1px solid $color-purple;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+
+        svg path {
+            fill-opacity: 0.4;
+        }
+    }
+
+    &__field {
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        padding-left: 52px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        outline: none;
+
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0em;
+        color: $color-black;
+
+        &:focus,
+        &:focus-visible {
+            border: 1px solid $color-purple;
+
+            &~.custom-input__label {
+                color: $color-purple;
+            }
+        }
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+            user-select: none;
+        }
+    }
+
+    &__icon {
+        fill-opacity: 1;
+    }
+}

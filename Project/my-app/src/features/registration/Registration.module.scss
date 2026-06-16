@@ -1,0 +1,78 @@
+.registration {
+    width: 100%;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        &--errors {
+            input:invalid {
+                border-color: rgba(255, 117, 117, 1);
+
+                &~label {
+                    color: rgba(255, 117, 117, 1);
+
+                    svg path {
+                        color: rgba(255, 117, 117, 1);
+                        fill-opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__success {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__title {
+        margin: 0 auto;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0em;
+        user-select: none; 
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__error-text {
+        margin: 0 auto;
+        color: rgba(255, 117, 117, 1);
+    }
+
+    &__login-btn {
+        border: none;
+        background-color: inherit;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0;
+        user-select: none;
+
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0em;
+        color: $color-black;
+
+        &:hover {
+            color: $color-bg-dark-sup;
+        }
+
+    }
+}

@@ -1,0 +1,55 @@
+.custom-input {
+  position: relative;
+  display: flex;
+}
+.custom-input:hover .custom-input__label {
+  color: rgb(180, 169, 255);
+}
+.custom-input:hover .custom-input__label svg path {
+  color: rgb(180, 169, 255);
+  fill-opacity: 1;
+}
+.custom-input:hover .custom-input__field {
+  border: 1px solid rgb(180, 169, 255);
+}
+.custom-input__label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.custom-input__label svg path {
+  fill-opacity: 0.4;
+}
+.custom-input__field {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  padding-left: 52px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  outline: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: rgb(0, 0, 0);
+}
+.custom-input__field:focus, .custom-input__field:focus-visible {
+  border: 1px solid rgb(180, 169, 255);
+}
+.custom-input__field:focus ~ .custom-input__label, .custom-input__field:focus-visible ~ .custom-input__label {
+  color: rgb(180, 169, 255);
+}
+.custom-input__field::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  -moz-user-select: none;
+       user-select: none;
+}
+.custom-input__field::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.custom-input__icon {
+  fill-opacity: 1;
+}/*# sourceMappingURL=CustomInput.module.css.map */

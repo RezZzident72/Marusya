@@ -1,0 +1,85 @@
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: flex-start;
+
+    @include mobile {
+        gap: 40px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__data {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @include mobile {
+            align-items: flex-start;
+        }
+    }
+
+    &__wrapper-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: $color-white-muted;
+
+        @include mobile {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__avatar {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0em;
+        user-select: none; 
+    }
+
+    &__email-icon {
+        fill-opacity: 1;
+    }
+
+    &__wrapper-text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0em;
+        color: $color-white;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    &__value {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0em;
+        color: $color-white;
+
+        @include mobile {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}

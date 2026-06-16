@@ -1,0 +1,40 @@
+.user-favorites {
+    user-select: none; 
+
+    :global {
+
+        .swiper {
+            overflow: visible;
+            height: 336px;
+        }
+
+        .swiper-slide {
+            width: 224px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 224px);
+        justify-content: center;
+        gap: 64px 40px;
+    }
+
+    &__item {
+        height: 100%;
+
+        &:has(a:focus-visible),
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    &__list-empty {
+        font-size: 26px;
+        font-weight: 24px;
+        margin: 0;
+    }
+}

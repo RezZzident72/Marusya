@@ -1,14 +1,26 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { moviesApi } from "../services/moviesApi";
+import { moviesApi } from "../services/cinemaApi";
+import { authApi } from "../services/authApi";
+import { favoriteApi } from "../services/favoriteApi";
+import modalReducer from "./slices/modalSlice";
+import trailerReducer from "./slices/trailerSilice";
+import searchReducer from "./slices/searchSlice";
 
 export const store = configureStore({
   reducer: {
-    // Подключаем автогенерируемый редюсер нашего API
+    modal: modalReducer,
+    trailer: trailerReducer,
+    search: searchReducer,
+    
     [moviesApi.reducerPath]: moviesApi.reducer,
+    [authApi.reducerPath]: authApi.reducer,
+    [favoriteApi.reducerPath]: favoriteApi.reducer,
   },
-  // Добавляем middleware для кэширования и работы RTK Query
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(moviesApi.middleware),
+    getDefaultMiddleware()
+      .concat(moviesApi.middleware)
+      .concat(authApi.middleware)
+      .concat(favoriteApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;

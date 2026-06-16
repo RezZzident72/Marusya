@@ -2,6 +2,10 @@
     display: flex;
     gap: 10px;
 
+    @include mobile {
+        gap: 24px;
+    }
+
     &__link {
         display: flex;
         align-items: center;
@@ -10,6 +14,21 @@
         border-radius: 8px;
         width: 36px;
         height: 36px;
+
+        &:hover,
+        &:focus-visible {
+            border: 1px solid $color-purple;
+            outline: none;
+
+            .socials__icon {
+                color: $color-purple;
+            }
+        }
+
+        @include mobile {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     &__icon {

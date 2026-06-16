@@ -1,0 +1,82 @@
+.auth-modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: $color-backdrop-modal;
+
+    &__wrapper {
+        position: relative;
+        width: 564px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+            position: static;
+            width: 375px;
+        }
+    }
+
+    &__window {
+        width: 420px;
+        box-sizing: border-box;
+        padding: 64px 20px 32px;
+        background-color: $color-white;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include mobile {
+            width: 335px;
+            position: relative;
+        }
+    }
+
+    &__logo {
+        margin: 0 auto;
+        width: 157px;
+        height: 35px;
+        user-select: none; 
+
+        @include mobile {
+            width: 132px;
+            height: 30px;
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        right: 0px;
+        background-color: $color-white;
+        border: none;
+        padding: 10px;
+        border-radius: 24px;
+
+        &:hover {
+            background-color: rgb(197, 197, 197);
+        }
+
+        @include mobile {
+            top: 8px;
+            right: 8px;
+            padding: 10px;
+            border-radius: none;
+
+            &:hover {
+                background-color: rgb(227, 227, 227);
+            }
+        }
+
+    }
+}

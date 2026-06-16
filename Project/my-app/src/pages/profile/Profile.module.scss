@@ -1,0 +1,81 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0 0;
+    gap: 64px;
+
+    @include mobile {
+        gap: 40px;
+        padding: 0;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: 0em;
+        margin: 0;
+        user-select: none; 
+
+        @include mobile {
+            font-size: 24px;
+            line-height: 32px;
+
+        }
+    }
+
+    &__naviagte {
+        display: flex;
+        gap: 64px;
+
+        @include mobile {
+            gap: 24px;
+        }
+    }
+
+    &__btn {
+        padding: 12px 0;
+        border: none;
+        background-color: inherit;
+        color: $color-white;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        user-select: none;
+        cursor: pointer;
+
+        &--active {
+            border-bottom: 2px solid rgba(220, 93, 252, 1);
+        }
+
+        &:focus-visible, &:hover {
+            outline: none;
+            transform: scale(1.03);
+        }
+
+        @include mobile {
+            padding: 8px 0;
+        }
+    }
+
+    &__btn-text {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0em;
+
+        @include mobile {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    &__user-icon {
+        fill-opacity: 1;
+
+        @include mobile {
+
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    display: none;
+    max-height: 24px;
+
+    @include mobile {
+        display: flex;
+        grid-column: 3;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: initial;
+        border: none;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__icon {
+        color: $color-white;
+
+        &:hover {
+            color: $color-purple;
+        }
+    }
+}

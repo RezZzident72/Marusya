@@ -1,0 +1,112 @@
+.search {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include mobile {
+        display: none;
+
+        &--mobile-open {
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+            min-height: 56px;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        color: $color-white-muted;
+        top: 12px;
+        left: 16px;
+
+        @include mobile {
+            top: 16px;
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        border: none;
+        background-color: initial;
+        color: $color-white-muted;
+
+        &:hover {
+            color: $color-purple;
+        }
+
+        @include mobile {
+            top: 16px;
+        }
+    }
+
+    &__field {
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 8px;
+        padding: 12px 16px 12px 54px;
+        border: none;
+        gap: 12px;
+        background-color: #393B3C;
+        color: $color-white;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0em;
+
+        &::placeholder {
+            color: $color-white-muted;
+        }
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        @include mobile {
+            padding: 16px 16px 16px 54px;
+        }
+    }
+
+    &__result {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 8px;
+        width: 559px;
+        margin: 0px;
+        right: 0px;
+        min-height: 40px;
+        background-color: $color-bg-dark;
+        margin: 12px 0 0;
+        border-radius: 8px;
+
+        @include mobile {
+            padding: 24px 20px;
+            width: 100%;
+            top: 56px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        &--empty {
+            text-align: center;
+            color: $color-white;
+        }
+
+        &:hover {
+            outline: 1px solid $color-white-muted;
+            border-radius: 6px;
+        }
+    }
+}

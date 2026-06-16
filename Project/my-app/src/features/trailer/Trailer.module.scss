@@ -1,0 +1,123 @@
+.trailer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: $color-backdrop-trailer;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__wrapper {
+        position: relative;
+        width: 76%;
+        height: 54%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mobile {
+            width: 98%;
+            height: 50%;
+        }
+    }
+
+    &__video-container {
+        position: relative;
+        width: 86%;
+        height: 100%;
+        border: 1px solid $color-white-muted;
+        background-color: $color-bg-dark;
+        padding: 1px;
+
+        iframe {
+            margin: 0;
+        }
+
+        @include mobile {
+            width: 100%;
+            border: none;
+            padding: 0;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 8px;
+        background-color: $color-white;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+
+        &:hover {
+            background-color: rgb(228, 228, 228);
+        }
+
+        @include mobile {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__btn-icon {
+        width: 40px;
+        height: 40px;
+        color: $color-black;
+
+        @include mobile {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        right: 0px;
+        background-color: $color-white;
+        border: none;
+        padding: 12px;
+        border-radius: 24px;
+
+        &:hover {
+            background-color: rgb(228, 228, 228);
+        }
+
+        @include mobile {
+            padding: 4px;
+            top: 8px;
+            right: 8px;
+        }
+    }
+
+    &__title-container {
+        position: absolute;
+        box-sizing: border-box;
+        left: 20px;
+        right: 20px;
+        bottom: 24px;
+        padding: 24px 40px;
+        background-color: rgba(10, 11, 11, 0.5);
+
+        @include mobile {
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+    }
+}

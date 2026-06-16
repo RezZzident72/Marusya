@@ -1,0 +1,50 @@
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.login__form--errors input:invalid {
+  border-color: rgb(255, 117, 117);
+}
+.login__form--errors input:invalid ~ label {
+  color: rgb(255, 117, 117);
+}
+.login__form--errors input:invalid ~ label svg path {
+  color: rgb(255, 117, 117);
+  fill-opacity: 1;
+}
+.login__title {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+.login__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.login__error-text {
+  margin: 0 auto;
+  color: rgb(255, 117, 117);
+}
+.login__registration-btn {
+  border: none;
+  background-color: inherit;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: rgb(0, 0, 0);
+}
+.login__registration-btn:hover {
+  color: rgb(116, 116, 116);
+}/*# sourceMappingURL=Login.module.css.map */

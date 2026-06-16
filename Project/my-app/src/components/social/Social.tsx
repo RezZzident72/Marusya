@@ -1,7 +1,8 @@
 import styles from "./Social.module.scss";
-import { VkIcon, YoutubeIcon, OkIcon, TelegramIcon } from "../icon/Icons";
+import { VkIcon, YoutubeIcon, OkIcon, TelegramIcon } from "../icons/Icons";
+import { memo } from "react";
 
-export const Socials = () => {
+const SocialsComponent = () => {
     return (
         <div className={styles.socials}>
             <a href="https://vk.com" className={styles['socials__link']} aria-label="ВК" target="_blank" rel="noreferrer">
@@ -22,3 +23,6 @@ export const Socials = () => {
         </div>
     )
 }
+
+
+export const Socials = memo(SocialsComponent)

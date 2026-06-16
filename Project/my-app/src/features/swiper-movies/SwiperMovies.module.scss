@@ -1,0 +1,14 @@
+.swiper-container-wrapper {
+  width: 100%;
+  overflow: visible;
+
+  :global {
+    .swiper-slide {
+      width: 220px;
+
+      &:hover {
+        scale: 1.02;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.swiper-container-wrapper {
+  width: 100%;
+  overflow: visible;
+}
+.swiper-container-wrapper :global .swiper-slide {
+  width: 220px;
+}
+.swiper-container-wrapper :global .swiper-slide:hover {
+  scale: 1.02;
+}/*# sourceMappingURL=SwiperMovies.module.css.map */
