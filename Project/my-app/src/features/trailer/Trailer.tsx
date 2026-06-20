@@ -1,6 +1,6 @@
 import styles from "./Trailer.module.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { closeTrailerWindow } from "../../app/slices/trailerSilice";
+import { closeTrailerWindow } from "../../app/slices/trailerSlice";
 import { CloseIcon, PlayIcon } from "../../components/icons/Icons";
 import ReactPlayer from 'react-player'
 import { useState } from "react";

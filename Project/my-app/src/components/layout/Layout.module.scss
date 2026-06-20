@@ -9,8 +9,6 @@
     font-family: sans-serif;
     width: 100%;
     min-height: 100vh;
-    max-width: 1440px;
-    margin: 0 auto;
     background-color: initial;
     overflow: hidden;
 
@@ -30,13 +28,11 @@
     }
 
     &__header {
-        max-width: 1440px;
-        margin: 0 auto;
         z-index: 100;
         width: 100%;
         min-height: 96px;
         box-sizing: border-box;
-        padding: 23px 80px;
+        padding: 23px 0;
         position: fixed;
         top: 0;
         background-color: rgba(0, 0, 0, 0.7);
@@ -45,7 +41,7 @@
         user-select: none; 
 
         @include mobile {
-            padding: 16px 20px;
+            padding: 16px 0;
             min-height: 64px;
         }
     }
@@ -118,29 +114,26 @@
     }
 
     &__content {
-        max-width: 1440px;
-        padding: 32px 80px 120px;
+        padding: 32px 0 120px;
         width: 100%;
-        margin: 96px auto 0;
         box-sizing: border-box;
         color: white;
+        margin-top: 96px;
 
         @include mobile {
-            padding: 16px 20px 24px;
+            padding: 16px 0 24px;
         }
     }
 
     &__footer {
-        max-width: 1440px;
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        padding: 40px 80px;
+        padding: 40px 0;
         box-sizing: border-box;
-        margin: 0 auto;
 
         @include mobile {
-            padding: 24px 20px;
+            padding: 24px 0;
             justify-content: flex-start;
         }
     }

@@ -1,5 +1,6 @@
 import { useGetRandomFilmQuery } from "../../services/cinemaApi";
 import { PromoFilm } from "../../components/promo-film/PromoFilm";
+import { PromoFilmSkeleton } from "../../components/promo-film/PromoFilmSkeleton";
 import { TopFilms } from "../../features/top-films/TopFilms";
 
 export const HomePage = () => {
@@ -7,12 +8,7 @@ export const HomePage = () => {
 
    if (isLoading) {
       return (
-         <div style={{
-            minHeight: '552px',
-            backgroundColor: '#111',
-            borderRadius: '16px',
-            margin: '20px 0'
-         }} />
+         <PromoFilmSkeleton />
       );
    }
 

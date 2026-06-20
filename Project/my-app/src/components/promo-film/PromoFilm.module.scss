@@ -4,6 +4,19 @@
     gap: 10px;
     grid-template-columns: minmax(360px, 1fr) minmax(auto, 1fr);
 
+    &--skeleton {
+        border-bottom-right-radius: 16px;
+        background-color: #111;
+
+        @include mobile {
+            min-height: 234px;
+        }
+
+        .promo__raiting {
+            background-color: inherit;
+        }
+    }
+
     @include mobile {
         display: flex;
         flex-direction: column-reverse;
@@ -106,7 +119,7 @@
     }
 
     &__cover {
-        user-select: none; 
+        user-select: none;
         width: 100%;
         max-width: 680px;
         overflow: hidden;
@@ -160,7 +173,7 @@
 
     &__favorite-btn {
         display: flex;
-        
+
         &--active {
             .promo__icon {
                 color: $color-purple;

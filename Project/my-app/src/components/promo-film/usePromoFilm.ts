@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { openAuthModal } from "../../app/slices/modalSlice";
-import { openTrailerWindow } from "../../app/slices/trailerSilice";
+import { openTrailerWindow } from "../../app/slices/trailerSlice";
 import { authApi } from "../../services/authApi";
 import { useAddFavoritesMutation, useDeleteFavoritesMutation, useGetFavoritesQuery } from "../../services/favoriteApi";
 import { Movie } from "../../services/cinemaApi";

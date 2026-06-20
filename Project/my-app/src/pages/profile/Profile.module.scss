@@ -15,7 +15,7 @@
         line-height: 56px;
         letter-spacing: 0em;
         margin: 0;
-        user-select: none; 
+        user-select: none;
 
         @include mobile {
             font-size: 24px;
@@ -29,7 +29,13 @@
         gap: 64px;
 
         @include mobile {
-            gap: 24px;
+            gap: clamp(4px, 2vw, 24px);
+        }
+
+        @media (max-width: 355px) {
+            flex-direction: column;
+            align-items: center;
+
         }
     }
 
@@ -45,11 +51,16 @@
         user-select: none;
         cursor: pointer;
 
+        @media (max-width: 355px) {
+            width: fit-content;
+        }
+
         &--active {
             border-bottom: 2px solid rgba(220, 93, 252, 1);
         }
 
-        &:focus-visible, &:hover {
+        &:focus-visible,
+        &:hover {
             outline: none;
             transform: scale(1.03);
         }
@@ -74,8 +85,6 @@
     &__user-icon {
         fill-opacity: 1;
 
-        @include mobile {
-
-        }
+        @include mobile {}
     }
 }
