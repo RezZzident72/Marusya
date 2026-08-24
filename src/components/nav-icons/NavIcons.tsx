@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../app/hooks";
 import { openAuthModal } from "../../app/slices/modalSlice";
 import { openSearch } from "../../app/slices/searchSlice";
 
-interface NavIconsProps {
+type NavIconsProps = {
     isAuth: boolean;
 }
 

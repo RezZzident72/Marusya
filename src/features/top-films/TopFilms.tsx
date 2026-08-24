@@ -25,7 +25,7 @@ export const TopFilms = () => {
                         )} />
                 ) : (
                     <ul className={styles["top-10-films__list"]}>
-                        {movies && movies.map((film) => {
+                        {movies?.map((film) => {
                             return (
                                 <li className={styles["top-10-films__item"]} key={film.id}>
                                     <FilmCard film={film} />

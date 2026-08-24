@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface SearchState {
+type SearchState = {
     isOpen: boolean;
 }
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./GenreCard.module.scss";
 import { translateGenre } from "../../utils/genre-translation";
 
-interface GenreCardProps {
+type GenreCardProps = {
     genre: string;
     title: string;
     image: string;

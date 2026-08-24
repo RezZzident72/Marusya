@@ -1,15 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Movie } from "./cinemaApi";
+import type { Movie } from "./cinemaApi";
 
 // Получение списка
 export type FavoriteResponse = Movie[];
 
-//Ддобавление фильма
-export interface AddFavoritesRequest {
+//Добавление фильма
+export type AddFavoritesRequest = {
     movieId: string;
 }
 
-export interface AddFavoriteResponse {
+export type AddFavoriteResponse = {
     favorites: string[];
     surname: string;
     name: string;
@@ -18,14 +18,14 @@ export interface AddFavoriteResponse {
 }
 
 //Удаление фильма
-export interface DeleteFavoritesResponse {
+export type DeleteFavoritesResponse = {
     favorites: string[];
     surname: string;
     name: string;
     email: string;
 }
 
-export interface DeleteFavoritesRequest {
+export type DeleteFavoritesRequest = {
     movieId: number;
 }
 
@@ -37,7 +37,7 @@ export const favoriteApi = createApi({
     }),
     tagTypes: ["UserFavorites"],
     endpoints: build => ({
-        getFavorites: build.query<Movie[], void>({
+        getFavorites: build.query<Movie[], undefined>({
             query: () => ({
                 url: "/favorites",
                 method: "GET",
@@ -62,7 +62,7 @@ export const favoriteApi = createApi({
         }),
         deleteFavorites: build.mutation<DeleteFavoritesResponse, DeleteFavoritesRequest>({
             query: ({ movieId }) => ({
-                url: `/favorites/${movieId}`,
+                url: `/favorites/${String(movieId)}`,
                 method: "DELETE",
             }),
             invalidatesTags: ["UserFavorites"],

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { useNavigate } from "react-router-dom";
-import { useLoginMutation, ResponseError } from "../../services/authApi";
+import type { ResponseError } from "../../services/authApi";
+import { useLoginMutation } from "../../services/authApi";
 import { closeAuthModal } from "../../app/slices/modalSlice";
 
 export const useLogin = () => {
@@ -23,7 +24,7 @@ export const useLogin = () => {
 
             if (response.result) {
                 dispatch(closeAuthModal());
-                navigate("/profile");
+                void navigate("/profile");
             }
         } catch (error) {
             const err = error as ResponseError;

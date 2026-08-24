@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../app/hooks";
-import { useLogoutMutation, authApi, ResponseError } from "../../services/authApi";
+import type { ResponseError } from "../../services/authApi";
+import { useLogoutMutation, authApi } from "../../services/authApi";
 import { favoriteApi } from "../../services/favoriteApi";
 
 export const useUserInfo = () => {
@@ -12,7 +13,7 @@ export const useUserInfo = () => {
         const resetStoresAndRedirect = () => {
             dispatch(authApi.util.resetApiState());
             dispatch(favoriteApi.util.resetApiState());
-            navigate("/");
+            void navigate("/");
         };
 
         try {

@@ -7,12 +7,12 @@ export const formatRuntime = (totalMinutes: number | undefined | null): string =
   const minutes = totalMinutes % 60;
 
   if (hours === 0) {
-    return `0 ч ${minutes} мин`;
+    return `0 ч ${String(minutes)} мин`;
   }
 
   if (minutes === 0) {
-    return `${hours} ч`;
+    return `${String(hours)} ч`;
   }
 
-  return `${hours} ч ${minutes} мин`;
+  return `${String(hours)} ч ${String(minutes)} мин`;
 };

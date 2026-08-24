@@ -14,7 +14,7 @@ export const Trailer = () => {
 
     return (
         <div className={styles["trailer"]} onClick={() => dispatch(closeTrailerWindow())}>
-            <div className={styles["trailer__wrapper"]} onClick={(e) => e.stopPropagation()}>
+            <div className={styles["trailer__wrapper"]} onClick={(e) => { e.stopPropagation(); }}>
                 <div className={styles["trailer__video-container"]}>
                     {trailerUrl &&
                         <>
@@ -30,7 +30,7 @@ export const Trailer = () => {
                                 }
                                 playing
                                 controls
-                                onStart={() => setIsVideoPlaying(true)}
+                                onStart={() => { setIsVideoPlaying(true); }}
                             />
 
                             {trailerTitle && !isVideoPlaying && (

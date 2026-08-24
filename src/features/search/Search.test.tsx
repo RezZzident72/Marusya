@@ -3,7 +3,7 @@ import { vi, describe, it, expect } from "vitest";
 import { Search } from "./Search";
 import { useSearch } from "./useSearch";
 import "@testing-library/jest-dom";
-import { Movie } from "../../services/cinemaApi";
+import type { Movie } from "../../services/cinemaApi";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { store } from "../../app/store";

@@ -26,7 +26,7 @@ export const FilmListPage = () => {
          </Link>
          <div className={styles["films__wrapper"]}>
             <ul className={styles["films__list"]}>
-               {movies && movies.length > 0 ? (movies?.map((film) => (
+               {movies && movies.length > 0 ? (movies.map((film) => (
                   <li className={styles["films__item"]} key={film.id}>
                      <FilmCard film={film} />
                   </li>

@@ -1,6 +1,6 @@
 import styles from "./Loader.module.scss";
 
-interface LoaderProps {
+type LoaderProps = {
     value: string;
 }
 

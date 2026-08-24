@@ -9,7 +9,7 @@ import { closeAuthModal } from "../../app/slices/modalSlice";
 
 export const AuthModal = () => {
     const [isLogin, setIsLogin] = useState(true);
-    const toggleForm = () => setIsLogin((login) => !login);
+    const toggleForm = () => { setIsLogin((login) => !login); };
 
     const dispatch = useAppDispatch()
 

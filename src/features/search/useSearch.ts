@@ -25,7 +25,7 @@ export const useSearch = () => {
             dispatch(openSearch());
         }, 400);
 
-        return () => clearTimeout(handler);
+        return () => { clearTimeout(handler); };
     }, [inputValue, dispatch]);
 
     const { data: films, isFetching } = useGetMoviesQuery(

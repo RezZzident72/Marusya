@@ -7,7 +7,7 @@ import styles from "./FilmInfoPage.module.scss";
 
 export const FilmInfoPage = () => {
     const { movieId } = useParams<{ movieId: string }>()
-    const { data: film, isLoading, isError } = useGetFilmQuery(movieId || "")
+    const { data: film, isLoading, isError } = useGetFilmQuery(movieId ?? "")
 
     if (!isLoading && (isError || !film || String(film.id) !== String(movieId))) {
         //Попытка грамотно проверить наличие фильма по id :)

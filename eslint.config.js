@@ -42,10 +42,13 @@ const eslintConfig = config(
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ["src/pages/genre-page/GenrePage.tsx"],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },
+
     settings: {
       vitest: {
         typecheck: true,
@@ -77,6 +80,9 @@ const eslintConfig = config(
       ],
       "dot-notation": "off",
       "@typescript-eslint/dot-notation": "off",
+      "@typescript-eslint/no-deprecated": "off",
+      "@typescript-eslint/no-invalid-void-type": "off",
+      "@typescript-eslint/no-unnecessary-condition": "off",
     },
   },
 

@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 //Вход запрос
-export interface LoginRequest {
+export type LoginRequest = {
     email: string;
     password: string;
 }
 
 //Регистрация запрос
-export interface RegisterRequest {
+export type RegisterRequest = {
     email: string;
     password: string;
     name: string;
@@ -15,11 +15,11 @@ export interface RegisterRequest {
 }
 
 // Ответ
-export interface Response {
+export type Response = {
     result?: boolean;
 }
 
-export interface ResponseError {
+export type ResponseError = {
     status?: number;
     data?: {
         result?: boolean;
@@ -28,7 +28,7 @@ export interface ResponseError {
 }
 
 // Проофиль ответ
-export interface ProfileResponse {
+export type ProfileResponse = {
     favorites: string[];
     email: string;
     name: string;

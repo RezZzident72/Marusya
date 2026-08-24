@@ -5,7 +5,7 @@ import { EmailIcon } from "../../components/icons/Icons";
 import { PasswordIcon } from "../../components/icons/Icons";
 import { useLogin } from "./useLogin";
 
-interface LoginProps {
+type LoginProps = {
     switchForm: () => void;
 }
 
@@ -20,10 +20,10 @@ export const Login = ({ switchForm }: LoginProps) => {
 
     return (
         <div className={styles["login"]}>
-            <form className={styles["login__form"]} onSubmit={handleSubmit} onInvalid={(e) => e.currentTarget.classList.add(styles["login__form--errors"])}>
+            <form className={styles["login__form"]} onSubmit={(e) => { void handleSubmit(e); }} onInvalid={(e) => { e.currentTarget.classList.add(styles["login__form--errors"]); }}>
                 <div className={styles["login__fields"]}>
-                    <CustomInput type="email" placeholder="Электронная почта" id="user-email" label={<EmailIcon />} onChange={e => setEmail(e.target.value)} required />
-                    <CustomInput type="password" placeholder="Пароль" id="user-password" label={<PasswordIcon />} onChange={e => setPassword(e.target.value)} required />
+                    <CustomInput type="email" placeholder="Электронная почта" id="user-email" label={<EmailIcon />} onChange={e => { setEmail(e.target.value); }} required />
+                    <CustomInput type="password" placeholder="Пароль" id="user-password" label={<PasswordIcon />} onChange={e => { setPassword(e.target.value); }} required />
 
                     {errorMessage && (
                         <div className={styles["login__error-text"]}>

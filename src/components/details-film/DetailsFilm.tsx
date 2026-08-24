@@ -1,4 +1,4 @@
-import { Movie } from "../../services/cinemaApi";
+import type { Movie } from "../../services/cinemaApi";
 import styles from "./DetailsFilm.module.scss";
 import { convertAndFormatCurrency, getRussianLanguageName, translateAwards, translateDirectorName } from "./index.ts";
 
@@ -7,7 +7,7 @@ type DetailsFilmProps = {
 }
 
 export const DetailsFilm = ({ film }: DetailsFilmProps) => {
-    const languageName = getRussianLanguageName(film?.language);
+    const languageName = getRussianLanguageName(film.language);
 
     return (
         <div className={styles["details"]}>
@@ -21,11 +21,11 @@ export const DetailsFilm = ({ film }: DetailsFilmProps) => {
                 </li>
                 <li className={styles["details__item"]}>
                     <span className={styles["details__label"]}>Бюджет</span>
-                    <span className={styles["details__value"]}>{convertAndFormatCurrency(film?.budget)}</span>
+                    <span className={styles["details__value"]}>{convertAndFormatCurrency(film.budget)}</span>
                 </li>
                 <li className={styles["details__item"]}>
                     <span className={styles["details__label"]}>Выручка</span>
-                    <span className={styles["details__value"]}>{convertAndFormatCurrency(film?.revenue)}</span>
+                    <span className={styles["details__value"]}>{convertAndFormatCurrency(film.revenue)}</span>
                 </li>
                 <li className={styles["details__item"]}>
                     <span className={styles["details__label"]}>Режиссёр</span>
@@ -33,7 +33,7 @@ export const DetailsFilm = ({ film }: DetailsFilmProps) => {
                 </li>
                 <li className={styles["details__item"]}>
                     <span className={styles["details__label"]}>Продакшен</span>
-                    <span className={styles["details__value"]}>{film?.production || "Нет информации"}</span>
+                    <span className={styles["details__value"]}>{film.production || "Нет информации"}</span>
                 </li>
                 <li className={styles["details__item"]}>
                     <span className={styles["details__label"]}>Награды</span>

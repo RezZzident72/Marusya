@@ -1,10 +1,10 @@
 import styles from "./CustomInput.module.scss";
-import { InputHTMLAttributes, ReactNode } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
 
-interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
+type CustomInputProps = {
     id: string;
     label: ReactNode;
-}
+} & InputHTMLAttributes<HTMLInputElement>
 
 
 export const CustomInput = ({ id, label, type = "text", placeholder, onChange, ...rest }: CustomInputProps) => {

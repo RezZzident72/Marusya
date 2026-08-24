@@ -21,7 +21,7 @@ export const UserFavorites = () => {
                     )} />
             ) : films && films.length > 0 ? (
                 <ul className={styles["user-favorites__list"]}>
-                    {films?.map((film) => (
+                    {films.map((film) => (
                         <li className={styles["user-favorites__item"]} key={film.id}>
                             <FilmCard film={film} />
                         </li>

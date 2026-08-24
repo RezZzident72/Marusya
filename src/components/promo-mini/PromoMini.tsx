@@ -1,4 +1,4 @@
-import { Movie } from "../../services/cinemaApi";
+import type { Movie } from "../../services/cinemaApi";
 import styles from "./PromoMini.module.scss";
 import NoPoster from "../../assets/image/NoPoster.jpg";
 import { StarIcon } from "../icons/Icons";
@@ -18,7 +18,7 @@ export const PromoMini = ({ film }: PromoMiniProps) => {
     const dispatch = useAppDispatch()
 
     const handlePromoClick = () => {
-        navigate(`/${film.id}`);
+       void  navigate(`/${String(film.id)}`);
         dispatch(closeSearch())
     };
 
@@ -31,7 +31,7 @@ export const PromoMini = ({ film }: PromoMiniProps) => {
                 <div className={styles["promo-mini__film-meta"]}>
                     <div className={styles["promo-mini__raiting"]} style={{ backgroundColor: getRatingColor(film.tmdbRating) }}>
                         <StarIcon className={styles["promo-mini__star-icon"]} />
-                        <span className={styles["promo-mini__raiting-value"]}>{film?.tmdbRating ? film.tmdbRating.toFixed(1) : "—"}</span>
+                        <span className={styles["promo-mini__raiting-value"]}>{film.tmdbRating ? film.tmdbRating.toFixed(1) : "—"}</span>
                     </div>
                     <span className={styles["promo-mini__film-meta-text"]}>{film.releaseYear}</span>
                     <span className={styles["promo-mini__film-meta-text"]}>{translateGenre(film.genres[0])}</span>

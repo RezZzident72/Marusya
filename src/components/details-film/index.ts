@@ -42,8 +42,8 @@ const getPluralForm = (number: number, one: string, two: string, five: string): 
 export const translateAwards = (awardsString: string | undefined): string => {
   if (!awardsString) return "Нет информации";
 
-  const winMatch = awardsString.match(/(\d+)\s*win/i);
-  const nominationMatch = awardsString.match(/(\d+)\s*nomination/i);
+  const winMatch = /(\d+)\s*win/i.exec(awardsString);
+  const nominationMatch = /(\d+)\s*nomination/i.exec(awardsString);
 
   const winsCount = winMatch ? parseInt(winMatch[1], 10) : 0;
   const nominationsCount = nominationMatch ? parseInt(nominationMatch[1], 10) : 0;
@@ -52,11 +52,11 @@ export const translateAwards = (awardsString: string | undefined): string => {
     return awardsString === "Нет информации" ? "Нет информации" : awardsString;
   }
   const winsText = winsCount > 0 
-    ? `${winsCount} ${getPluralForm(winsCount, "победа", "победы", "побед")}` 
+    ? `${String(winsCount)} ${getPluralForm(winsCount, "победа", "победы", "побед")}` 
     : "";
     
   const nominationsText = nominationsCount > 0 
-    ? `${nominationsCount} ${getPluralForm(nominationsCount, "номинация", "номинации", "номинаций")}` 
+    ? `${String(nominationsCount)} ${getPluralForm(nominationsCount, "номинация", "номинации", "номинаций")}` 
     : "";
 
   if (winsText && nominationsText) {

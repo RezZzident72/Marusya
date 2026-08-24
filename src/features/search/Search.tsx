@@ -25,7 +25,7 @@ export const Search = () => {
                 className={styles['search__field']}
                 placeholder="Поиск"
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={(e) => { setInputValue(e.target.value); }}
             />
             <label className={styles['search__label']} htmlFor="search-film">
                 <SearchIcon className={styles['search__icon']} />

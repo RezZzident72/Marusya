@@ -1,15 +1,15 @@
-import { Movie } from "../../services/cinemaApi";
+import type { Movie } from "../../services/cinemaApi";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import styles from "./SwiperMovies.module.scss";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-interface SwiperProps {
+type SwiperProps = {
     films: Movie[] | undefined;
     renderItem: (film: Movie) => ReactNode;
     gap: number;

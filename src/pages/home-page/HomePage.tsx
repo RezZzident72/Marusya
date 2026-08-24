@@ -4,7 +4,7 @@ import { PromoFilmSkeleton } from "../../components/promo-film/PromoFilmSkeleton
 import { TopFilms } from "../../features/top-films/TopFilms";
 
 export const HomePage = () => {
-   let { data: film, refetch, isLoading } = useGetRandomFilmQuery()
+   const { data: film, refetch, isLoading } = useGetRandomFilmQuery()
 
    if (isLoading) {
       return (
@@ -15,7 +15,7 @@ export const HomePage = () => {
    return (
       <>
          {film &&
-            <PromoFilm film={film} isHome={true} updateFilm={refetch} />
+            <PromoFilm film={film} isHome={true} updateFilm={() => { void refetch(); }} />
          }
          <TopFilms />
       </>

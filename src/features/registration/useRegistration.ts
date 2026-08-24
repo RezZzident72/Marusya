@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useRegisterMutation, ResponseError } from "../../services/authApi";
+import type { ResponseError } from "../../services/authApi";
+import { useRegisterMutation } from "../../services/authApi";
 
 export const useRegistration = () => {
     const [registration, { isLoading }] = useRegisterMutation();
@@ -22,16 +23,14 @@ export const useRegistration = () => {
         }
 
         try {
-            const response = await registration({ 
+            await registration({ 
                 email, 
                 name, 
                 surname, 
                 password 
             }).unwrap();
 
-            if (response) {
-                setSuccess(true);
-            }
+            setSuccess(true);
         } catch (error) {
             const err = error as ResponseError;
             const isInvalidCredentials = err.data?.error;

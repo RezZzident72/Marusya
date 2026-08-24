@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface ModalState {
+type ModalState = {
     isAuthOpen: boolean;
 }
 

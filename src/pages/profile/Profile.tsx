@@ -19,7 +19,7 @@ export const Profile = () => {
          <div className={styles["profile__naviagte"]}>
             <button
                className={`${styles["profile__btn"]} ${activeTab === 'favorite' ? styles['profile__btn--active'] : ''}`}
-               onClick={() => setActiveTab("favorite")}>
+               onClick={() => { setActiveTab("favorite"); }}>
                <FavoriteIcon />
                {isMobile ? (
                   <span className={styles["profile__btn-text"]}>Избранное</span>
@@ -30,7 +30,7 @@ export const Profile = () => {
             </button>
             <button
                className={`${styles["profile__btn"]} ${activeTab === 'settings' ? styles['profile__btn--active'] : ''}`}
-               onClick={() => setActiveTab("settings")}>
+               onClick={() => { setActiveTab("settings"); }}>
                <UserIcon className={styles["profile__user-icon"]} />
                {isMobile ? (
                   <span className={styles["profile__btn-text"]}>Настройки</span>

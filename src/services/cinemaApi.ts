@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export interface Movie {
+export type Movie = {
   id: number;
   title: string;
   originalTitle: string;
@@ -28,7 +28,7 @@ export interface Movie {
   trailerYouTubeId: string;
 }
 
-export interface MovieQueryParams {
+export type MovieQueryParams = {
   id?: string;
   count?: number;
   page?: number;
@@ -40,10 +40,10 @@ export const moviesApi = createApi({
   reducerPath: "moviesApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://cinemaguide.skillbox.cc/" }),
   endpoints: build => ({
-    getMovies: build.query<Movie[], MovieQueryParams | void>({
+    getMovies: build.query<Movie[], MovieQueryParams | undefined>({
       query: params => ({
         url: "/movie",
-        params: params || {},
+        params: params ?? {},
       })
     }),
     getGenre: build.query<string[], void>({
@@ -53,7 +53,7 @@ export const moviesApi = createApi({
     }),
     getFilm: build.query<Movie, string | number>({
       query: movieId => ({
-        url: `/movie/${movieId}`,
+        url: `/movie/${String(movieId)}`,
         params: movieId || {}
       })
     }),
@@ -62,7 +62,7 @@ export const moviesApi = createApi({
         url: `/movie/random`,
       })
     }),
-    getTopFilms: build.query<Movie[], void>({
+    getTopFilms: build.query<Movie[], undefined>({
       query: () => ({
         url: `/movie/top10`,
       })

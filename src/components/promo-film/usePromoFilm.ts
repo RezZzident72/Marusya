@@ -5,7 +5,7 @@ import { openAuthModal } from "../../app/slices/modalSlice";
 import { openTrailerWindow } from "../../app/slices/trailerSlice";
 import { authApi } from "../../services/authApi";
 import { useAddFavoritesMutation, useDeleteFavoritesMutation, useGetFavoritesQuery } from "../../services/favoriteApi";
-import { Movie } from "../../services/cinemaApi";
+import type { Movie } from "../../services/cinemaApi";
 
 export const usePromoFilm = (film: Movie) => {
     const isTrailerOpen = useAppSelector((state) => state.trailer.isTrailerOpen);
@@ -18,11 +18,9 @@ export const usePromoFilm = (film: Movie) => {
     const [addFilmToFavorite, { isLoading: isAdding }] = useAddFavoritesMutation();
     const [deleteFilmToFavorite, { isLoading: isDeleting }] = useDeleteFavoritesMutation();
 
-    const isFavorite = favorites?.some(favFilm => Number(favFilm.id) === Number(film.id));
+    const isFavorite = favorites?.some(favFilm => favFilm.id === film.id);
 
     const handleFavoriteClick = async () => {
-        if (!film) return;
-
         if (!user) {
             dispatch(openAuthModal());
             return;
@@ -30,11 +28,11 @@ export const usePromoFilm = (film: Movie) => {
 
         try {
             if (isFavorite) {
-                await deleteFilmToFavorite({ movieId: Number(film.id) }).unwrap();
+                await deleteFilmToFavorite({ movieId: film.id }).unwrap();
             } else {
                 await addFilmToFavorite({ movieId: String(film.id) }).unwrap();
             }
-        } catch (error) {
+        } catch  {
             alert("Произошла ошибка. Попробуйте позже.");
         }
     };
@@ -47,7 +45,7 @@ export const usePromoFilm = (film: Movie) => {
     };
 
     const handleDetailsClick = () => {
-        navigate(`/${film.id}`);
+        void navigate(`/${String(film.id)}`);
     };
 
     return {

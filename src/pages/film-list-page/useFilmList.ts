@@ -21,11 +21,11 @@ export const useFilmList = () => {
         setCount((prevCount) => prevCount + pageStep);
     };
 
-    const hasMoreFilms = !isError && movies && movies.length === count;
+    const hasMoreFilms = !isError && movies?.length === count;
     const isShowButtonVisible = isFetching || hasMoreFilms;
 
     return {
-        genreName: genreName || "",
+        genreName: genreName ?? "",
         movies,
         isError,
         isFetching,
