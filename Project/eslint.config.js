@@ -75,6 +75,8 @@ const eslintConfig = config(
           ],
         },
       ],
+      "dot-notation": "off",
+      "@typescript-eslint/dot-notation": "off",
     },
   },
 
