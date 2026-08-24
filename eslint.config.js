@@ -42,9 +42,7 @@ const eslintConfig = config(
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
-        projectService: {
-          allowDefaultProject: ["src/pages/genre-page/GenrePage.tsx"],
-        },
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
     },
