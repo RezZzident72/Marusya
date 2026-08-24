@@ -1,27 +1,43 @@
-# vite-template-redux
+# Cinema Guide — поиск фильмов (React + TypeScript)
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+Фронтенд-приложение онлайн-кинотеатра, которое делал во время обучения. Внутри реализован полноценный каталог: можно искать фильмы по названию, фильтровать по жанрам, смотреть детальную информацию, авторизоваться и добавлять карточки в «Избранное».
 
-```sh
-npx tiged reduxjs/redux-templates/packages/vite-template-redux my-app
-```
+## Что использовал внутри (Стек)
 
-## Goals
+*   **Сборка и язык:** Vite + TypeScript (настроен строгий режим)
+*   **Фреймворк:** React 18 (на функциональных компонентах и хуках)
+*   **Стейт-менеджер:** Redux Toolkit
+*   **Работа с сервером:** RTK Query (с настроенным кэшированием и автоматическим рефетчем данных при мутациях)
+*   **Роутинг:** React Router DOM (v6)
+*   **Стили:** SCSS-модули (модульная структура стилей через `@use`)
+*   **Качество кода:** ESLint (с пресетом `strict-type-checked`) + Prettier
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+## Фичи проекта
 
-## Scripts
+*   Полноценная авторизация (регистрация, логин) с сохранением состояния сессии.
+*   Динамическая смена заголовков вкладок браузера при переходах между страницами.
+*   Функция добавления фильмов в закладки, которая обновляет интерфейс на лету.
+*   Мелкие приятные детали вроде правильного склонения числительных в блоке наград («1 победа», «2 победы», «5 побед»).
+*   Проект полностью адаптирован под мобильные экраны и планшеты.
+*   **Код чистый:** проект без проблем собирается через `build` и проходит проверку `lint` без единого ворнинга.
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+## Как запустить у себя
 
-## Inspiration
+1. Клонируем репозиторий:
+   ```bash
+   git clone <ССЫЛКА_НА_ВАШ_GITHUB_РЕПОЗИТОРИЙ>
+   ```
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+2. Ставим зависимости:
+   ```bash
+   npm install
+   ```
+
+3. Запускаем локальный сервер:
+   ```bash
+   npm run dev
+   ```
+
+## Скрипты
+* `npm run lint` — запуск проверки кода линтером.
+* `npm run build` — сборка проекта для продакшена (проходит без ошибок типов).
