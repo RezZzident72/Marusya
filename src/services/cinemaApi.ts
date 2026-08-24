@@ -62,7 +62,7 @@ export const moviesApi = createApi({
         url: `/movie/random`,
       })
     }),
-    getTopFilms: build.query<Movie[], undefined>({
+    getTopFilms: build.query<Movie[], void>({
       query: () => ({
         url: `/movie/top10`,
       })

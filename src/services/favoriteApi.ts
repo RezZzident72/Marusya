@@ -37,7 +37,7 @@ export const favoriteApi = createApi({
     }),
     tagTypes: ["UserFavorites"],
     endpoints: build => ({
-        getFavorites: build.query<Movie[], undefined>({
+        getFavorites: build.query<Movie[], void>({
             query: () => ({
                 url: "/favorites",
                 method: "GET",
