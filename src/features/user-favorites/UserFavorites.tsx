@@ -10,6 +10,14 @@ export const UserFavorites = () => {
 
     const { data: films } = useGetFavoritesQuery()
 
+     if (!films || films.length === 0) {
+        return (
+            <span className={styles["user-favorites__list-empty"]}>
+                В избранном пока нет доступных фильмов
+            </span>
+        );
+    }
+
     return (
         <div className={styles["user-favorites"]}>
             {isMobile ? (
@@ -18,8 +26,9 @@ export const UserFavorites = () => {
                     gap={40}
                     renderItem={(film) => (
                         <FilmCard film={film} />
-                    )} />
-            ) : films && films.length > 0 ? (
+                    )} 
+                />
+            ) : (
                 <ul className={styles["user-favorites__list"]}>
                     {films.map((film) => (
                         <li className={styles["user-favorites__item"]} key={film.id}>
@@ -27,11 +36,7 @@ export const UserFavorites = () => {
                         </li>
                     ))}
                 </ul>
-            ) : (
-                <span className={styles["user-favorites__list-empty"]}>
-                    В избранном пока нет доступных фильмов
-                </span>
             )}
         </div>
-    )
-}
+    );
+};
