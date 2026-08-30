@@ -38,36 +38,36 @@ export type MovieQueryParams = {
 
 export const moviesApi = createApi({
   reducerPath: "moviesApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://cinemaguide.skillbox.cc/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
   endpoints: build => ({
     getMovies: build.query<Movie[], MovieQueryParams | undefined>({
       query: params => ({
-        url: "/movie",
+        url: "movie",
         params: params ?? {},
-      })
+      }),
     }),
     getGenre: build.query<string[], void>({
       query: () => ({
-        url: "/movie/genres",
-      })
+        url: "movie/genres",
+      }),
     }),
     getFilm: build.query<Movie, string | number>({
       query: movieId => ({
-        url: `/movie/${String(movieId)}`,
-        params: movieId || {}
-      })
+        url: `movie/${String(movieId)}`,
+        params: movieId || {},
+      }),
     }),
     getRandomFilm: build.query<Movie, void>({
       query: () => ({
-        url: `/movie/random`,
-      })
+        url: `movie/random`,
+      }),
     }),
     getTopFilms: build.query<Movie[], void>({
       query: () => ({
-        url: `/movie/top10`,
-      })
+        url: `movie/top10`,
+      }),
     }),
   }),
-});
+})
 
 export const { useGetMoviesQuery, useGetGenreQuery, useGetFilmQuery, useGetRandomFilmQuery, useGetTopFilmsQuery } = moviesApi;
